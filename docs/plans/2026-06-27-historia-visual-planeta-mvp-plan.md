@@ -11,10 +11,10 @@ Personas curiosas que quieren entender la historia del planeta sin una cronolog�
 ## MVP v1
 
 - Una sola página estática publicable en GitHub Pages.
-- 10 eventos de alta relevancia científica y narrativa.
-- Cada evento incluye fecha aproximada, era, resumen y por qué importa.
-- Imágenes en estilo coherente de museo/paleoarte generadas por IA mediante OpenAI/Codex.
-- Interacción básica: tarjetas, detalle lateral y vista compacta.
+- 40 hitos de alta relevancia científica y narrativa, evitando una lista demasiado generalista.
+- Cada evento incluye fecha aproximada, era, tipo, resumen, explicación desarrollada y por qué importa.
+- Imágenes en estilo coherente de museo/paleoarte generadas por IA mediante OpenAI/Codex, reutilizadas por familias visuales hasta generar assets específicos por evento.
+- Interacción básica: tarjetas, detalle lateral con texto largo y vista compacta.
 
 ## No objetivos de v1
 
@@ -46,6 +46,7 @@ Un evento entra si cumple al menos uno:
 - Añadir navegación por escala temporal proporcional/logarítmica.
 - Añadir glosario: Hádico, Arcaico, Proterozoico, Fanerozoico, Ma, Ga.
 - Añadir fuentes/referencias por evento.
+- Generar assets visuales específicos para los 30 eventos nuevos, manteniendo el estilo de museo/paleoarte.
 
 ### v1.2
 - Ampliar a 25–40 eventos manteniendo curaduría estricta.
@@ -59,6 +60,6 @@ Un evento entra si cumple al menos uno:
 
 ## Verificación
 
-- `npm test` debe validar 10 eventos y existencia de imágenes.
+- `npm test` debe validar al menos 30 eventos, textos desarrollados y existencia de imágenes.
 - La página debe cargar localmente por servidor estático.
 - La URL de GitHub Pages debe responder HTTP 200.

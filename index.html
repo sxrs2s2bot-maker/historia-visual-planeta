@@ -1,5 +1,37 @@
 <!doctype html>
 <html lang="es">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Timeline visual e interactiva de los eventos más significativos de la historia del planeta." /><title>Historia Visual del Planeta</title><link rel="stylesheet" href="./styles.css" /></head>
-<body><div class="stars" aria-hidden="true"></div><header class="hero"><p class="eyebrow">Primera versión · 10 hitos esenciales</p><h1>Historia Visual del Planeta</h1><p class="hero-copy">Recorre 4.540 millones de años en una línea temporal sencilla, visual y pensada para crecer: de la Tierra primitiva a dinosaurios, extinciones y antecesores humanos.</p><div class="hero-actions"><a href="#timeline" class="button primary">Empezar el viaje</a><button class="button ghost" id="toggle-density" type="button">Vista compacta</button></div></header><main><section class="intro-card" aria-label="Criterio editorial"><h2>Criterio de selección</h2><p>Esta v1 prioriza eventos con impacto planetario o evolutivo real: formación de la Tierra, condiciones para la vida, grandes transiciones biológicas, dinosaurios, extinción K–Pg y origen humano. No es una lista de curiosidades: es una columna vertebral para una futura experiencia educativa más amplia.</p></section><section class="timeline" id="timeline" aria-label="Timeline de la historia del planeta"></section></main><aside class="drawer" id="drawer" aria-hidden="true"><button class="close" id="close-drawer" type="button" aria-label="Cerrar detalle">×</button><div id="drawer-content"></div></aside><footer><p>Proyecto MVP · imágenes generadas por IA con OpenAI/Codex · contenido preparado para revisión científica incremental.</p></footer><script type="module" src="./main.js"></script></body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Timeline visual e interactiva con hitos desarrollados de la historia del planeta." />
+  <title>Historia Visual del Planeta</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <header class="hero">
+    <p class="eyebrow">Versión ampliada · <span id="event-count">40 hitos importantes</span></p>
+    <h1>Historia Visual del Planeta</h1>
+    <p class="hero-copy">Recorre 4.540 millones de años con una línea temporal más precisa y menos generalista: geología temprana, origen de la vida, revoluciones metabólicas, animales, plantas, dinosaurios, extinciones, mamíferos y evolución humana.</p>
+    <div class="hero-actions">
+      <a href="#timeline" class="button primary">Empezar el viaje</a>
+      <button class="button ghost" id="toggle-density" type="button">Vista compacta</button>
+    </div>
+  </header>
+  <main>
+    <section class="intro-card" aria-label="Criterio editorial">
+      <h2>Criterio de selección</h2>
+      <p>He ampliado la selección para que no sea una lista genérica: cada hito entra porque cambia condiciones planetarias, abre una transición evolutiva mayor, reorganiza ecosistemas o es necesario para entender dinosaurios y humanos dentro de una historia continua. Cada tarjeta incluye resumen, explicación desarrollada y relevancia.</p>
+    </section>
+    <section class="timeline" id="timeline" aria-label="Timeline de la historia del planeta"></section>
+  </main>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <button class="close" id="close-drawer" type="button" aria-label="Cerrar detalle">×</button>
+    <div id="drawer-content"></div>
+  </aside>
+  <footer>
+    <p>Proyecto MVP ampliado · imágenes generadas por IA con OpenAI/Codex · contenido preparado para revisión científica incremental y fuentes por evento en la siguiente iteración.</p>
+  </footer>
+  <script type="module" src="./main.js"></script>
+</body>
 </html>

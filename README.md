@@ -6,26 +6,28 @@ Web app educativa en español para recorrer de forma sencilla y visual los hitos
 
 https://sxrs2s2bot-maker.github.io/historia-visual-planeta/
 
-## MVP v1
+## MVP ampliada
 
-- Timeline interactivo con 10 eventos realmente relevantes.
-- Tarjetas visuales con fecha, era, resumen y explicación de importancia.
-- Drawer lateral de detalle.
+- Timeline interactivo con 40 hitos importantes, no solo 10 eventos generales.
+- Eventos organizados por tipo: geología planetaria, océanos, origen de la vida, metabolismo, clima, animales, plantas, dinosaurios, extinciones, mamíferos y evolución humana.
+- Cada evento contiene:
+  - fecha/rango temporal,
+  - era,
+  - resumen,
+  - explicación desarrollada,
+  - relevancia histórica/evolutiva.
+- Drawer lateral de detalle con textos largos.
 - Vista compacta para recorrer rápido.
 - Estructura estática preparada para GitHub Pages.
 
-## Eventos incluidos
+## Criterio editorial
 
-1. Formación de la Tierra.
-2. Corteza y primeros océanos.
-3. Primeras formas de vida.
-4. Gran Oxidación.
-5. Células eucariotas.
-6. Animales multicelulares del Ediacárico.
-7. Explosión cámbrica.
-8. Auge de los dinosaurios.
-9. Extinción K–Pg.
-10. Antecesores humanos y Homo sapiens.
+Un evento entra si cumple al menos uno:
+
+1. Cambia condiciones planetarias globales.
+2. Abre una transición evolutiva mayor.
+3. Reorganiza ecosistemas a escala mundial.
+4. Es una bisagra narrativa necesaria para entender dinosaurios o humanos.
 
 ## Desarrollo local
 
