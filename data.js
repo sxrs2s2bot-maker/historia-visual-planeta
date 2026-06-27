@@ -1,4 +1,5 @@
 import { buildExtraEvents } from './extra-events.js';
+import { buildDetailedEvents } from './detailed-events.js';
 
 const images = {
   planet: 'assets/generated/01-earth-forms.webp',
@@ -13,7 +14,7 @@ const images = {
   human: 'assets/generated/10-hominins.webp'
 };
 
-export const events = [
+const baseEvents = [
   {
     id: 'solar-system-accretion', era: 'Sistema Solar temprano', date: 'Hace 4.567–4.540 millones de años', dateShort: '4,57–4,54 Ga', type: 'Geología planetaria', color: '#ff7a3d', image: images.planet,
     title: 'La Tierra se forma en un disco de escombros',
@@ -293,6 +294,13 @@ export const events = [
     summary: 'Pigmentos, adornos, arte, rituales y redes sociales amplias muestran cultura acumulativa cada vez más potente.',
     details: 'La cultura simbólica incluye ocre, objetos decorados, enterramientos, arte rupestre y comunicación compleja. No aparece solo en Europa ni en una fecha mágica: tiene raíces africanas y expresiones regionales. Combinada con lenguaje, cooperación y aprendizaje acumulativo, permite a Homo sapiens adaptarse culturalmente mucho más rápido que por evolución biológica.',
     why: 'Es el puente hacia una especie capaz de transformar el planeta mediante conocimiento compartido.'
-  },
-  ...buildExtraEvents(images)
+  }
 ];
+
+export const events = [
+  ...baseEvents,
+  ...buildExtraEvents(images),
+  ...buildDetailedEvents(images)
+]
+  .map((event, index) => ({ ...event, order: event.order ?? index * 100 }))
+  .sort((a, b) => a.order - b.order);

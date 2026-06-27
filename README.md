@@ -8,8 +8,10 @@ https://sxrs2s2bot-maker.github.io/historia-visual-planeta/
 
 ## MVP ampliada
 
-- Timeline interactivo con 80 hitos importantes: historia planetaria, evolución biológica, humanidad temprana, civilización y Antropoceno.
-- Eventos organizados por tipo: geología planetaria, océanos, origen de la vida, metabolismo, clima, animales, plantas, dinosaurios, extinciones, mamíferos y evolución humana.
+- Timeline interactivo con 120 hitos importantes: historia planetaria, evolución biológica, humanidad temprana, agricultura, ciudades, ciencia, industria, crisis climática, genómica e inteligencia artificial.
+- Navegador visual animado para avanzar evento a evento, con progreso, controles anterior/siguiente y tarjetas sincronizadas.
+- 22 imágenes distintas generadas/optimizadas, con 12 nuevas ilustraciones para reducir la reutilización visual.
+- Eventos organizados por tipo: geología planetaria, océanos, origen de la vida, metabolismo, clima, animales, plantas, dinosaurios, extinciones, mamíferos, evolución humana, civilizaciones, tecnología y Antropoceno.
 - Cada evento contiene:
   - fecha/rango temporal,
   - era,

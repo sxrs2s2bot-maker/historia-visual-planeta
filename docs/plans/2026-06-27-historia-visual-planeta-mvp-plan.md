@@ -11,10 +11,10 @@ Personas curiosas que quieren entender la historia del planeta sin una cronolog�
 ## MVP v1
 
 - Una sola página estática publicable en GitHub Pages.
-- 80 hitos de alta relevancia científica y narrativa, evitando una lista demasiado generalista.
-- Cada evento incluye fecha aproximada, era, tipo, resumen, explicación desarrollada y por qué importa.
-- Imágenes en estilo coherente de museo/paleoarte generadas por IA mediante OpenAI/Codex, reutilizadas por familias visuales hasta generar assets específicos por evento.
-- Interacción básica: tarjetas, detalle lateral con texto largo y vista compacta.
+- 120 hitos de alta relevancia científica y narrativa, evitando una lista demasiado generalista y reduciendo saltos temporales grandes.
+- Cada evento incluye fecha aproximada, era, tipo, resumen, explicación desarrollada, por qué importa y orden cronológico validado.
+- Imágenes en estilo coherente de museo/paleoarte generadas por IA mediante OpenAI/Codex, con 22 assets distintos y 12 nuevas ilustraciones creadas en la ampliación minuciosa.
+- Interacción dinámica: navegador animado evento a evento, controles anterior/siguiente, progreso visual, tarjetas sincronizadas, detalle lateral con navegación interna y vista compacta.
 
 ## No objetivos de v1
 
@@ -46,7 +46,7 @@ Un evento entra si cumple al menos uno:
 - Añadir navegación por escala temporal proporcional/logarítmica.
 - Añadir glosario: Hádico, Arcaico, Proterozoico, Fanerozoico, Ma, Ga.
 - Añadir fuentes/referencias por evento.
-- Generar assets visuales específicos para los 70 eventos añadidos tras la primera MVP, manteniendo el estilo de museo/paleoarte.
+- Seguir aumentando cobertura visual específica para eventos que aún comparten imagen, manteniendo el estilo de museo/paleoarte.
 
 ### v1.2
 - Mantener curaduría estricta al ampliar por capítulos y evitar eventos redundantes.
@@ -60,6 +60,6 @@ Un evento entra si cumple al menos uno:
 
 ## Verificación
 
-- `npm test` debe validar 80 eventos renderizables, textos desarrollados y existencia de imágenes.
+- `npm test` debe validar 120 eventos renderizables, textos desarrollados, orden cronológico, existencia de imágenes y al menos 22 imágenes distintas.
 - La página debe cargar localmente por servidor estático.
 - La URL de GitHub Pages debe responder HTTP 200.

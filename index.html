@@ -10,18 +10,37 @@
 <body>
   <div class="stars" aria-hidden="true"></div>
   <header class="hero">
-    <p class="eyebrow">Versión ampliada · <span id="event-count">40 hitos importantes</span></p>
+    <p class="eyebrow">Versión minuciosa · <span id="event-count">120 hitos importantes</span></p>
     <h1>Historia Visual del Planeta</h1>
-    <p class="hero-copy">Recorre 4.540 millones de años con una línea temporal más precisa y menos generalista: geología temprana, origen de la vida, revoluciones metabólicas, animales, plantas, dinosaurios, extinciones, mamíferos y evolución humana.</p>
+    <p class="hero-copy">Recorre 4.540 millones de años con una línea temporal más fina y visual: del origen del planeta a tecnologías, civilizaciones, clima, genómica e inteligencia artificial, con navegación animada evento a evento.</p>
     <div class="hero-actions">
-      <a href="#timeline" class="button primary">Empezar el viaje</a>
+      <a href="#stage" class="button primary">Empezar el viaje animado</a>
+      <a href="#timeline" class="button">Ver todos los hitos</a>
       <button class="button ghost" id="toggle-density" type="button">Vista compacta</button>
     </div>
   </header>
   <main>
     <section class="intro-card" aria-label="Criterio editorial">
       <h2>Criterio de selección</h2>
-      <p>He ampliado la selección para que no sea una lista genérica: cada hito entra porque cambia condiciones planetarias, abre una transición evolutiva mayor, reorganiza ecosistemas o es necesario para entender dinosaurios y humanos dentro de una historia continua. Cada tarjeta incluye resumen, explicación desarrollada y relevancia.</p>
+      <p>La nueva ampliación reduce saltos temporales grandes con hitos más concretos: tecnologías intermedias, asentamientos, domesticaciones regionales, navegación, salud pública, electrónica y biotecnología. Cada evento entra porque cambia condiciones planetarias, abre una transición evolutiva o reorganiza sociedades y ecosistemas.</p>
+    </section>
+    <section class="stage" id="stage" aria-label="Navegador animado de eventos">
+      <div class="stage-visual"><img id="stage-image" alt="" /></div>
+      <div class="stage-copy">
+        <p class="eyebrow" id="stage-era"></p>
+        <div class="stage-meta"><strong id="stage-index"></strong><span id="stage-date"></span></div>
+        <h2 id="stage-title"></h2>
+        <p class="stage-summary" id="stage-summary"></p>
+        <p class="stage-details" id="stage-details"></p>
+        <p class="stage-why" id="stage-why"></p>
+        <div class="stage-controls">
+          <button type="button" id="prev-event">← Anterior</button>
+          <button type="button" id="read-stage">Leer detalle</button>
+          <button type="button" id="next-event">Siguiente →</button>
+        </div>
+        <div class="progress-shell" aria-hidden="true"><span id="progress-fill"></span></div>
+        <p class="progress-label" id="progress-label"></p>
+      </div>
     </section>
     <section class="timeline" id="timeline" aria-label="Timeline de la historia del planeta"></section>
   </main>
