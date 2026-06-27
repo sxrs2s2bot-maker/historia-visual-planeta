@@ -261,3 +261,241 @@ body.compact .event-body p { display: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+.section-heading {
+  max-width: 820px;
+}
+.section-heading h2,
+.geo-copy h2 {
+  margin: 10px 0 8px;
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  line-height: 0.95;
+}
+.section-heading p,
+.geo-copy p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.milestone-overview,
+.geo-card {
+  max-width: 1180px;
+  margin: 0 auto 54px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+.milestone-rail {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(190px, 1fr);
+  gap: 14px;
+  overflow-x: auto;
+  padding: 28px 2px 8px;
+  scrollbar-color: #7dd3fc rgba(255,255,255,.08);
+}
+.milestone-rail::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 54px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff7a3d, #22c55e, #22d3ee, #84cc16, #facc15, #fb923c, #a78bfa, #38bdf8);
+  opacity: 0.48;
+}
+.rail-stop {
+  position: relative;
+  z-index: 1;
+  min-height: 160px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 18px;
+  background: rgba(3, 7, 13, 0.72);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: transform .24s ease, border-color .24s ease, background .24s ease;
+}
+.rail-stop::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+  background: var(--accent);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent), transparent 78%), 0 0 30px var(--accent);
+}
+.rail-stop:hover,
+.rail-stop.active {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent), rgba(3, 7, 13, .78) 82%);
+}
+.rail-stop span {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.rail-stop strong,
+.rail-stop small {
+  display: block;
+}
+.rail-stop strong {
+  font-size: 1.04rem;
+  line-height: 1.2;
+}
+.rail-stop small {
+  margin-top: 8px;
+  color: var(--muted);
+  font-weight: 800;
+}
+.geo-card {
+  display: grid;
+  grid-template-columns: minmax(260px, .58fr) minmax(320px, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+.event-map {
+  min-height: 430px;
+  overflow: hidden;
+  border-radius: 26px;
+  border: 1px solid var(--line);
+  background: #06111f;
+  z-index: 1;
+}
+.leaflet-container {
+  background: #071627;
+  color: #092033;
+}
+.leaflet-control-attribution {
+  font-size: 10px;
+}
+.timeline {
+  padding-top: 0;
+}
+.timeline::before {
+  left: 60px;
+  top: 56px;
+  bottom: 80px;
+}
+.milestone-panel {
+  --accent: #7dd3fc;
+  position: relative;
+  margin: 0 0 24px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: rgba(9, 18, 33, 0.66);
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+.milestone-panel.open {
+  border-color: color-mix(in srgb, var(--accent), white 10%);
+  background: rgba(12, 24, 42, 0.92);
+}
+.milestone-summary {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 58px 1fr auto;
+  gap: 18px;
+  align-items: center;
+  padding: 22px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.milestone-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent), transparent 78%), 0 0 34px var(--accent);
+  justify-self: center;
+}
+.milestone-summary strong,
+.milestone-summary small,
+.milestone-summary em {
+  display: block;
+}
+.milestone-summary strong {
+  font-size: clamp(1.35rem, 3vw, 2.35rem);
+  line-height: 1;
+}
+.milestone-summary small {
+  color: var(--muted);
+  margin-top: 8px;
+}
+.milestone-summary em {
+  justify-self: end;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-style: normal;
+  font-weight: 900;
+  color: #03111f;
+  background: var(--accent);
+}
+.milestone-events {
+  display: none;
+  padding: 0 18px 20px 78px;
+  position: relative;
+}
+.milestone-panel.open .milestone-events {
+  display: block;
+  animation: dropTimeline .32s ease both;
+}
+.milestone-events::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 32px;
+  left: 45px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+@keyframes dropTimeline { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.event-mini-card {
+  grid-template-columns: 92px minmax(0, 1fr);
+  margin-bottom: 16px;
+  background: rgba(3, 7, 13, 0.56);
+}
+.event-mini-card:hover,
+.event-mini-card.active {
+  transform: translateX(5px);
+}
+.event-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.event-actions button[disabled] {
+  display: none;
+}
+body.compact .milestone-overview,
+body.compact .geo-card {
+  display: none;
+}
+body.compact .milestone-panel:not(.open) {
+  display: none;
+}
+body.compact .event-mini-card { grid-template-columns: 90px 1fr; }
+@media (max-width: 820px) {
+  .milestone-overview,
+  .geo-card { border-radius: 24px; padding: 18px; }
+  .geo-card { grid-template-columns: 1fr; }
+  .event-map { min-height: 330px; }
+  .milestone-summary { grid-template-columns: 40px 1fr; }
+  .milestone-summary em { grid-column: 2; justify-self: start; }
+  .milestone-events { padding-left: 18px; }
+  .milestone-events::before { display: none; }
+  .timeline::before { display: none; }
+  .event-mini-card { grid-template-columns: 48px 1fr; }
+}

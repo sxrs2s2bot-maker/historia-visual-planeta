@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Timeline visual e interactiva con hitos desarrollados de la historia del planeta." />
   <title>Historia Visual del Planeta</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQPDn5BwiTwGxWlC7kc4N4zIvFSU1kc=" crossorigin="" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -42,6 +43,22 @@
         <p class="progress-label" id="progress-label"></p>
       </div>
     </section>
+    <section class="milestone-overview" aria-label="Resumen horizontal de hitos">
+      <div class="section-heading">
+        <p class="eyebrow">Nueva vista</p>
+        <h2>Línea horizontal de hitos</h2>
+        <p>Los grandes hitos se leen de izquierda a derecha. Al abrir uno, sus eventos relacionados aparecen en una columna vertical, ordenados cronológicamente hacia abajo.</p>
+      </div>
+      <div class="milestone-rail" id="milestone-rail" aria-label="Hitos resumidos de la historia"></div>
+    </section>
+    <section class="geo-card" id="geography" aria-label="Mapa dinámico del evento seleccionado">
+      <div class="geo-copy">
+        <p class="eyebrow" id="map-status">Mapa dinámico · sin imagen generada</p>
+        <h2 id="map-title">Zona geográfica</h2>
+        <p id="map-description">Cuando el hito tenga país, región o zona aproximada, el mapa se centrará y dibujará el área sin generar una imagen nueva.</p>
+      </div>
+      <div id="event-map" class="event-map" role="img" aria-label="Mapa del mundo con zona resaltada"></div>
+    </section>
     <section class="timeline" id="timeline" aria-label="Timeline de la historia del planeta"></section>
   </main>
   <aside class="drawer" id="drawer" aria-hidden="true">
@@ -49,8 +66,9 @@
     <div id="drawer-content"></div>
   </aside>
   <footer>
-    <p>Proyecto MVP ampliado · imágenes generadas por IA con OpenAI/Codex · contenido preparado para revisión científica incremental y fuentes por evento en la siguiente iteración.</p>
+    <p>Proyecto MVP ampliado · imágenes generadas por IA con OpenAI/Codex · mapa dinámico con Leaflet/OpenStreetMap para dibujar zonas sin regenerar imágenes.</p>
   </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script type="module" src="./main.js"></script>
 </body>
 </html>
