@@ -2,6 +2,10 @@
 
 Web app educativa en español para recorrer de forma sencilla y visual los hitos más significativos de la historia del planeta.
 
+## URL publicada
+
+https://sxrs2s2bot-maker.github.io/historia-visual-planeta/
+
 ## MVP v1
 
 - Timeline interactivo con 10 eventos realmente relevantes.
