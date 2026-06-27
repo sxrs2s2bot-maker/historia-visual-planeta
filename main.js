@@ -201,9 +201,9 @@ function ensureMap() {
     zoomControl: true,
     attributionControl: true
   }).setView([16, 0], 1.35);
-  window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  window.L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     maxZoom: 6,
-    attribution: '&copy; OpenStreetMap'
+    attribution: '&copy; OpenStreetMap &copy; CARTO'
   }).addTo(map);
   mapLayerGroup = window.L.layerGroup().addTo(map);
 }
@@ -228,7 +228,12 @@ function updateMap(event) {
     window.L.rectangle(geo.bounds, style).addTo(mapLayerGroup);
   }
   window.L.marker(geo.center).addTo(mapLayerGroup).bindPopup(`<strong>${event.title}</strong><br>${geo.label}`);
-  map.fitBounds(geo.bounds, { padding: [26, 26], maxZoom: geo.zoom });
+  if (geo.kind === 'global') {
+    map.setView(geo.center, 1.8);
+  } else {
+    map.fitBounds(geo.bounds, { padding: [26, 26], maxZoom: geo.zoom });
+  }
+  window.requestAnimationFrame(() => map.invalidateSize());
 }
 
 function openDrawer(index) {

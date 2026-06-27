@@ -360,10 +360,11 @@ body.compact .event-body p { display: none; }
   display: grid;
   grid-template-columns: minmax(260px, .58fr) minmax(320px, 1fr);
   gap: 24px;
-  align-items: stretch;
+  align-items: start;
 }
 .event-map {
-  min-height: 430px;
+  height: 430px;
+  min-height: 0;
   overflow: hidden;
   border-radius: 26px;
   border: 1px solid var(--line);
