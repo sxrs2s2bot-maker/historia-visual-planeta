@@ -1,3 +1,5 @@
+import { buildExtraEvents } from './extra-events.js';
+
 const images = {
   planet: 'assets/generated/01-earth-forms.webp',
   ocean: 'assets/generated/02-oceans-crust.webp',
@@ -291,5 +293,6 @@ export const events = [
     summary: 'Pigmentos, adornos, arte, rituales y redes sociales amplias muestran cultura acumulativa cada vez más potente.',
     details: 'La cultura simbólica incluye ocre, objetos decorados, enterramientos, arte rupestre y comunicación compleja. No aparece solo en Europa ni en una fecha mágica: tiene raíces africanas y expresiones regionales. Combinada con lenguaje, cooperación y aprendizaje acumulativo, permite a Homo sapiens adaptarse culturalmente mucho más rápido que por evolución biológica.',
     why: 'Es el puente hacia una especie capaz de transformar el planeta mediante conocimiento compartido.'
-  }
+  },
+  ...buildExtraEvents(images)
 ];
