@@ -1,5 +1,6 @@
 import { buildExtraEvents } from './extra-events.js';
 import { buildDetailedEvents } from './detailed-events.js';
+import { buildMoreEvents } from './more-events.js';
 
 const images = {
   planet: 'assets/generated/01-earth-forms.webp',
@@ -297,10 +298,21 @@ const baseEvents = [
   }
 ];
 
+function galleryFor(event) {
+  return [
+    event.image,
+    `assets/generated/event-gallery/${event.id}-scene.webp`,
+    `assets/generated/event-gallery/${event.id}-detail.webp`,
+    `assets/generated/event-gallery/${event.id}-symbol.webp`
+  ];
+}
+
 export const events = [
   ...baseEvents,
   ...buildExtraEvents(images),
-  ...buildDetailedEvents(images)
+  ...buildDetailedEvents(images),
+  ...buildMoreEvents()
 ]
   .map((event, index) => ({ ...event, order: event.order ?? index * 100 }))
-  .sort((a, b) => a.order - b.order);
+  .sort((a, b) => a.order - b.order)
+  .map(event => ({ ...event, images: galleryFor(event) }));

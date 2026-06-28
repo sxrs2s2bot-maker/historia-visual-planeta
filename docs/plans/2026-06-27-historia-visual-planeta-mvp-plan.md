@@ -15,7 +15,7 @@ Personas curiosas que quieren entender la historia del planeta sin una cronolog�
 - Cada evento incluye fecha aproximada, era, tipo, resumen, explicación desarrollada, por qué importa y orden cronológico validado.
 - Imágenes en estilo coherente de museo/paleoarte generadas por IA mediante OpenAI/Codex, con 22 assets distintos y 12 nuevas ilustraciones creadas en la ampliación minuciosa.
 - Interacción dinámica: navegador animado evento a evento, línea horizontal de hitos-resumen, despliegue vertical cronológico de eventos relacionados, detalle lateral con navegación interna y vista compacta.
-- Mapa dinámico con Leaflet/OpenStreetMap para centrar y dibujar zonas aproximadas por evento cuando existe localización geográfica; no requiere generar una imagen nueva por cada mapa.
+- La sección de mapas se retiró por decisión de producto; la ampliación visual ahora se centra en galerías de imágenes por evento.
 
 ## No objetivos de v1
 
