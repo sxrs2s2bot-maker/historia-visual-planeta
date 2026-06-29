@@ -218,7 +218,7 @@ export function buildExtraEvents(images) {
       why: 'Da sentido científico a toda la timeline biológica: la vida es descendencia con modificación.'
     },
     {
-      id: 'germ-theory', era: 'Ciencia moderna', date: 'Siglo XIX', dateShort: '1800s', type: 'Medicina', color: '#2dd4bf', image: images.microbe,
+      id: 'germ-theory', era: 'Ciencia moderna', date: 'Décadas de 1860–1880', dateShort: '1860s–1880s', type: 'Medicina', color: '#2dd4bf', image: images.microbe,
       title: 'Teoría germinal de la enfermedad',
       summary: 'Microbios específicos se reconocen como causa de enfermedades, transformando higiene, cirugía y salud pública.',
       details: 'La teoría germinal cambió la medicina de forma práctica y conceptual. Pasteur, Koch, Lister y otros vincularon microorganismos con infección, fermentación y contagio. Esterilización, vacunas, agua limpia y control sanitario redujeron mortalidad. La humanidad empezó a combatir enfermedades entendiendo agentes invisibles, aunque los microbios siguieron evolucionando y resistiendo.',

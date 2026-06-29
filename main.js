@@ -23,15 +23,15 @@ const readStage = document.querySelector('#read-stage');
 const milestoneRail = document.querySelector('#milestone-rail');
 
 const MILESTONES = [
-  { id: 'planetary-beginnings', label: 'Origen del planeta', range: '4,57–3,5 Ga', accent: '#ff7a3d', match: e => e.order < 500 },
-  { id: 'microbial-earth', label: 'Tierra microbiana', range: '3,5–0,54 Ga', accent: '#22c55e', match: e => e.order >= 500 && e.order < 1300 },
-  { id: 'animal-worlds', label: 'Animales y mares', range: '541–390 Ma', accent: '#22d3ee', match: e => e.order >= 1300 && e.order < 1800 },
-  { id: 'land-and-dinosaurs', label: 'Tierra firme y dinosaurios', range: '390–66 Ma', accent: '#84cc16', match: e => e.order >= 1800 && e.order < 2700 },
-  { id: 'mammals-to-humans', label: 'Mamíferos y homininos', range: '66 Ma–300 ka', accent: '#facc15', match: e => e.order >= 2700 && e.order < 3600 },
-  { id: 'sapiens-expansion', label: 'Sapiens global', range: '300–12 ka', accent: '#f59e0b', match: e => e.order >= 3600 && e.order < 4800 },
-  { id: 'farming-cities', label: 'Agricultura y ciudades', range: '12.000–3.000 a. p.', accent: '#fb923c', match: e => e.order >= 4800 && e.order < 5600 },
-  { id: 'states-networks', label: 'Estados y redes', range: '3000 a. p.–1500', accent: '#a78bfa', match: e => e.order >= 5600 && e.order < 6200 },
-  { id: 'modern-acceleration', label: 'Mundo moderno', range: '1500–hoy', accent: '#38bdf8', match: e => e.order >= 6200 }
+  { id: 'planetary-beginnings', label: 'Origen del planeta', range: '4,57–3,5 Ga', accent: '#ff7a3d', match: e => e.order < 700 },
+  { id: 'microbial-earth', label: 'Tierra microbiana', range: '3,5–0,54 Ga', accent: '#22c55e', match: e => e.order >= 700 && e.order < 2100 },
+  { id: 'animal-worlds', label: 'Animales y mares', range: '541–390 Ma', accent: '#22d3ee', match: e => e.order >= 2100 && e.order < 2600 },
+  { id: 'land-and-dinosaurs', label: 'Tierra firme y dinosaurios', range: '390–66 Ma', accent: '#84cc16', match: e => e.order >= 2600 && e.order < 4400 },
+  { id: 'mammals-to-humans', label: 'Mamíferos y homininos', range: '66 Ma–300 ka', accent: '#facc15', match: e => e.order >= 4400 && e.order < 6000 },
+  { id: 'sapiens-expansion', label: 'Sapiens global', range: '300–12 ka', accent: '#f59e0b', match: e => e.order >= 6000 && e.order < 7900 },
+  { id: 'farming-cities', label: 'Agricultura y ciudades', range: '12.000–3.000 a. p.', accent: '#fb923c', match: e => e.order >= 7900 && e.order < 10300 },
+  { id: 'states-networks', label: 'Estados y redes', range: '3000 a. p.–1500', accent: '#a78bfa', match: e => e.order >= 10300 && e.order < 12000 },
+  { id: 'modern-acceleration', label: 'Mundo moderno', range: '1500–hoy', accent: '#38bdf8', match: e => e.order >= 12000 }
 ];
 
 let currentIndex = 0;
