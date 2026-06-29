@@ -298,15 +298,6 @@ const baseEvents = [
   }
 ];
 
-function galleryFor(event) {
-  return [
-    event.image,
-    `assets/generated/event-gallery/${event.id}-scene.webp`,
-    `assets/generated/event-gallery/${event.id}-detail.webp`,
-    `assets/generated/event-gallery/${event.id}-symbol.webp`
-  ];
-}
-
 export const events = [
   ...baseEvents,
   ...buildExtraEvents(images),
@@ -314,5 +305,4 @@ export const events = [
   ...buildMoreEvents()
 ]
   .map((event, index) => ({ ...event, order: event.order ?? index * 100 }))
-  .sort((a, b) => a.order - b.order)
-  .map(event => ({ ...event, images: galleryFor(event) }));
+  .sort((a, b) => a.order - b.order);

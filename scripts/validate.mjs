@@ -1,7 +1,7 @@
 import { events } from '../data.js';
 import { existsSync } from 'node:fs';
 
-const required = ['id','era','date','dateShort','title','summary','details','why','image','images','color','type'];
+const required = ['id','era','date','dateShort','title','summary','details','why','image','color','type'];
 if (events.length !== 160) throw new Error(`Expected exactly 160 important events, got ${events.length}`);
 
 const ids = new Set();
@@ -16,13 +16,10 @@ for (const [i, event] of events.entries()) {
   if (event.summary.length < 60) throw new Error(`Event ${i+1} summary too short`);
   if (event.details.length < 220) throw new Error(`Event ${i+1} details too short`);
   if (event.why.length < 60) throw new Error(`Event ${i+1} why too short`);
-  if (!Array.isArray(event.images) || event.images.length < 4) throw new Error(`Event ${i+1} needs at least 4 gallery images`);
-  for (const image of event.images) {
-    if (!existsSync(new URL(`../${image}`, import.meta.url))) throw new Error(`Missing gallery image ${image}`);
-  }
+  if (!existsSync(new URL(`../${event.image}`, import.meta.url))) throw new Error(`Missing image ${event.image}`);
 }
 
-const uniqueImages = new Set(events.flatMap(event => event.images));
-if (uniqueImages.size < 540) throw new Error(`Expected at least 540 distinct gallery images, got ${uniqueImages.size}`);
+const uniqueImages = new Set(events.map(event => event.image));
+if (uniqueImages.size < 62) throw new Error(`Expected at least 62 distinct primary images, got ${uniqueImages.size}`);
 
-console.log(`Validated ${events.length} developed timeline events, ${uniqueImages.size} gallery image assets, and chronological ordering.`);
+console.log(`Validated ${events.length} developed timeline events, ${uniqueImages.size} primary image assets, and chronological ordering.`);

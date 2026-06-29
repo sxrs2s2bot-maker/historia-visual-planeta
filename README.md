@@ -12,8 +12,8 @@ https://sxrs2s2bot-maker.github.io/historia-visual-planeta/
 - Navegador visual animado para avanzar evento a evento, con progreso, controles anterior/siguiente y tarjetas sincronizadas.
 - Nueva línea horizontal de 9 hitos-resumen; al abrir un hito, despliega hacia abajo sus eventos relacionados en orden cronológico.
 - Se retiró la sección de mapas: la experiencia vuelve a centrarse en narración, imágenes y lectura.
-- Cada suceso tiene una galería de 4 imágenes: ilustración principal más escena, detalle y símbolo visual generados/derivados.
-- 62 ilustraciones principales y 480 imágenes de galería generadas localmente para reducir la repetición visual.
+- Cada suceso mantiene una ilustración principal; se retiraron las galerías automáticas porque añadían imágenes abstractas sin valor narrativo.
+- 62 ilustraciones principales para reducir la repetición visual.
 - Eventos organizados por tipo: geología planetaria, océanos, origen de la vida, metabolismo, clima, animales, plantas, dinosaurios, extinciones, mamíferos, evolución humana, civilizaciones, tecnología y Antropoceno.
 - Cada evento contiene:
   - fecha/rango temporal,

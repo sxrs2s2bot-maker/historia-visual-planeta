@@ -8,7 +8,6 @@ const toggleDensity = document.querySelector('#toggle-density');
 const eventCount = document.querySelector('#event-count');
 const stage = document.querySelector('#stage');
 const stageImage = document.querySelector('#stage-image');
-const stageGallery = document.querySelector('#stage-gallery');
 const stageEra = document.querySelector('#stage-era');
 const stageDate = document.querySelector('#stage-date');
 const stageTitle = document.querySelector('#stage-title');
@@ -118,25 +117,6 @@ function setActiveMilestone(milestoneId, { scroll = false } = {}) {
   renderMilestoneRail();
 }
 
-function renderGallery(event) {
-  if (!stageGallery) return;
-  const labels = ['Escena', 'Detalle', 'Símbolo', 'Atmósfera'];
-  stageGallery.innerHTML = event.images.map((src, i) => `
-    <button type="button" class="gallery-thumb ${i === 0 ? 'active' : ''}" data-gallery-src="${src}" aria-label="Ver imagen ${i + 1} de ${event.title}">
-      <img src="${src}" alt="${labels[i] ?? 'Imagen'} de ${event.title}" loading="lazy" />
-      <span>${labels[i] ?? `Imagen ${i + 1}`}</span>
-    </button>`).join('');
-}
-
-function drawerGallery(event) {
-  const labels = ['Escena principal', 'Detalle contextual', 'Símbolo visual', 'Atmósfera cromática'];
-  return `<div class="drawer-gallery">${event.images.map((src, i) => `
-    <figure>
-      <img src="${src}" alt="${labels[i] ?? 'Imagen adicional'} de ${event.title}" loading="lazy" />
-      <figcaption>${labels[i] ?? `Imagen ${i + 1}`}</figcaption>
-    </figure>`).join('')}</div>`;
-}
-
 function updateStage(index, { scroll = false } = {}) {
   currentIndex = Math.max(0, Math.min(events.length - 1, index));
   const event = events[currentIndex];
@@ -149,9 +129,8 @@ function updateStage(index, { scroll = false } = {}) {
   void stage.offsetWidth;
   stage.classList.add('stage-enter');
   stage.style.setProperty('--accent', event.color);
-  stageImage.src = event.images[0];
+  stageImage.src = event.image;
   stageImage.alt = `Ilustración de ${event.title}`;
-  renderGallery(event);
   stageEra.textContent = `${event.type} · ${event.era}`;
   stageDate.textContent = event.date;
   stageTitle.textContent = event.title;
@@ -178,7 +157,7 @@ function openDrawer(index) {
   drawerContent.innerHTML = `
     <p class="eyebrow">${event.type} · ${event.era} · ${event.date}</p>
     <h2>${event.title}</h2>
-    ${drawerGallery(event)}
+    <img src="${event.image}" alt="Ilustración de ${event.title}" />
     <h3>Qué ocurrió</h3>
     <p>${event.summary}</p>
     <h3>Explicación desarrollada</h3>
@@ -254,13 +233,6 @@ document.addEventListener('keydown', (e) => {
 toggleDensity.addEventListener('click', () => {
   document.body.classList.toggle('compact');
   toggleDensity.textContent = document.body.classList.contains('compact') ? 'Vista visual' : 'Vista compacta';
-});
-
-stageGallery?.addEventListener('click', (e) => {
-  const button = e.target.closest('[data-gallery-src]');
-  if (!button) return;
-  stageImage.src = button.dataset.gallerySrc;
-  stageGallery.querySelectorAll('.gallery-thumb').forEach(item => item.classList.toggle('active', item === button));
 });
 
 render();
